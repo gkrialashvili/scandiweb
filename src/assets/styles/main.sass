@@ -1,3 +1,19 @@
+@font-face
+    font-family: Raleway
+    src: url('../fonts/Raleway-Thin.woff'),
+    url('../fonts/Raleway-Thin.woff2')
+
+$raleway: "Raleway"
+
+body
+    font-family: $raleway
+
+.main-container
+    max-width: 1440px
+    display: flex
+    justify-content: center
+    width: 100%
+
 .headerMainContainer
     width: 100%
     min-height: 80px
@@ -45,6 +61,10 @@
     border-bottom: #5ECE7B 2px solid
     color: #5ECE7B
 
+.headerLeftCategory > div:hover
+    border-bottom: #5ECE7B 2px solid
+    color: #5ECE7B
+
 .dollar-arrow
     cursor: pointer
 
@@ -68,3 +88,69 @@
 .cartContainer
     position: relative
     width: 50px
+
+.padding
+    padding: 15px
+
+.homeTitle
+    width: 100%
+
+.homeTitle
+    display: flex
+
+.homeMainContainer
+    flex-direction: column
+    align-items: center
+
+.catalogItemsMain
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-start
+    width: 100%
+
+.catalogItemsMain_itemConteiner
+    display: flex
+    flex-direction: column
+    max-width: 386px
+    width: 100%
+    align-items: center
+    cursor: pointer
+
+.catalogItemsMain_itemConteiner_img
+    width: 356px
+    height: 330px
+    background: #FFFFFF
+
+.catalogItemsMain_itemConteiner_text
+    font-family: $raleway
+    font-style: normal
+    font-weight: 300
+    font-size: 18px
+    line-height: 160%
+    display: flex
+    align-items: center
+    color: #8D8F9A
+    width: 356px
+
+.catalogItemsMain_itemConteiner_text:last-child
+    color: #1D1F22
+    font-weight: bold
+
+.catalogItemsMain_itemConteiner_imgContainer
+    position: relative
+    .outOfStock
+        opacity: 0.5
+        display: flex
+        position: absolute
+        align-items: center
+        justify-content: center
+        width: 356px
+        height: 330px
+        background-color: #ffff
+        z-index: 10
+        top: 0
+        font-family: $raleway
+        font-style: normal
+        font-weight: bold
+        font-size: 24px
+        color: #8D8F9A

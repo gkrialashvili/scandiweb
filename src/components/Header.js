@@ -4,7 +4,7 @@ import cartSign from "../assets/images/cart.svg";
 
 export default function HistoryModal() {
   return (
-    <div className="headerMainContainer">
+    <div className="headerMainContainer main-container padding">
       <div className="headerLeftCategory">
         <div className="active">WOMEN</div>
         <div>MEN</div>
@@ -28,9 +28,3 @@ export default function HistoryModal() {
     </div>
   );
 }
-
-let menuItem;
-setTimeout(function () {
-  menuItem = document.getElementsByName(".headerLeftCategory div");
-  console.log(menuItem);
-}, 1000);

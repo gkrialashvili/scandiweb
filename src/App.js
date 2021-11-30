@@ -2,6 +2,9 @@ import "./App.css";
 import Header from "./components/Header";
 import Home from "./components/homeCatalog";
 import GetProducts from "./components/GetProducts";
+import ProductContext from "./context/ProductContext";
+import { useContext } from "react";
+
 import {
   ApolloClient,
   InMemoryCache,
@@ -29,13 +32,16 @@ const client = new ApolloClient({
   link: links,
 });
 
-function App() {
+function App(props) {
+  const value = useContext(ProductContext);
+
   return (
     <div className="App">
       <Header />
-      <Home />
       <ApolloProvider client={client}>
-        <GetProducts />
+        <ProductContext>
+          <Home value={value} />
+        </ProductContext>
       </ApolloProvider>
     </div>
   );

@@ -1,8 +1,10 @@
 import { useQuery, gql } from "@apollo/client";
 import { LOAD_PRODUCTS } from "../GraphQL/queries";
-import { useEffect, useState } from "react";
+import { useEffect, useState, createContext } from "react";
 
-function GetProducts() {
+export const ProductContext = createContext();
+
+export const ProductProvider = ({ children }) => {
   const { error, loading, data } = useQuery(LOAD_PRODUCTS);
   const [productData, setproductData] = useState([]);
   const [categoryName, setCategoryName] = useState("tech");
@@ -22,24 +24,9 @@ function GetProducts() {
 
   if (nana) nana.map((e) => console.log(e.id));
 
-  if (nana) {
-    return (
-      <div className="container">
-        {nana.map((m) => {
-          return (
-            <div key={m.id}>
-              <img
-                src={m.gallery}
-                className="catalogItemsMain_itemConteiner_img"
-                alt=""
-              />
-              <h1>{m.name}</h1>
-              <h3></h3>
-            </div>
-          );
-        })}
-      </div>
-    );
-  } else return <div className="container">No Data</div>;
-}
-export default GetProducts;
+  return (
+    <ProductContext.Provider value={nana}>{children}</ProductContext.Provider>
+  );
+};
+
+export default ProductProvider;

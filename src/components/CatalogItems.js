@@ -1,6 +1,7 @@
 import cartImg from "../assets/images/catalog1.png";
 
-export default function CatalogItems() {
+export default function CatalogItems(props) {
+  console.log(props + "esaaa");
   return (
     <div className="catalogItemsMain_itemConteiner">
       <div className="catalogItemsMain_itemConteiner_imgContainer">
